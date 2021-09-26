@@ -54,4 +54,17 @@ Now we can take the mean of our factor variable in addition to our numeric and l
 
 # Problem 2
 
-This problem is about making plots! I'll get there eventually. 
+Let's load in our dataset:
+
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+
+*Still need to describe names/important variables.* The data set is `r nrow(penguins)` rows long and `r `ncol(penguins)` columns wide. The mean flipper length of the data set is *can't get this to work yet come back later*
+
+Next let's make a plot of the data:
+
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species))
+```
+
