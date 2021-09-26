@@ -17,6 +17,7 @@ library(tidyverse)
 # Problem 1
 
 Here's a **code chunk** that creates a _data frame_ with four different variables:
+
 ```{r}
 df_1 = tibble(
   sample = rnorm(10),
@@ -26,7 +27,7 @@ df_1 = tibble(
   )
 ```
 
-Next we try to take the mean of each:
+Next we try to take the mean of each variable:
 
 ```{r}
 mean(pull(df_1, sample))
@@ -40,14 +41,15 @@ mean(pull(df_1, factor))
 
 It only works for the `sample` and `gr_than_zero` variables! This is because you can only take the mean of a numeric or logical variable. Let's apply the `as.numeric` function to some of our variables:
 
-```{r}
-as.numeric(pull(df_1, gr_than_zero))
+```{r, eval = FALSE}
+mean(as.numeric(pull(df_1, gr_than_zero)))
 
-as.numeric(pull(df_1, char))
+mean(as.numeric(pull(df_1, char)))
 
-as.numeric(pull(df_1, factor))
+mean(as.numeric(pull(df_1, factor)))
 ```
 
+Now we can take the mean of our factor variable in addition to our numeric and logical variables. We still cannot take the mean of the character variable as it cannot be converted to a numeric variable.
 
 
 # Problem 2
