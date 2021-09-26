@@ -64,7 +64,9 @@ data("penguins", package = "palmerpenguins")
 
 Next let's make a plot of the data:
 
-```{r}
-ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species))
+```{r, warning = FALSE}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+geom_point() +
+theme(legend.position = "bottom")
 ```
 
