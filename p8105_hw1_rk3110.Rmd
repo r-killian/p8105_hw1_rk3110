@@ -2,7 +2,7 @@
 title: "Homework 1"
 author: Rose Killian (rk3110)
 date: 2021-09-25
-output: guthub_document
+output: github_document
 ---
 
 First homework for p8105! 
@@ -16,18 +16,31 @@ library(tidyverse)
 
 # Problem 1
 
-Here's a **code chunk** that creates a _data frame_:
-
+Here's a **code chunk** that creates a _data frame_ with four different variables:
 ```{r}
 df_1 = tibble(
   sample = rnorm(10),
   gr_than_zero = sample > 0,
-  char = c("aaaaaaaaaa"),
-  factor = factor(c("yes", "no", "maybe"))
-)
+  char = c("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"),
+  factor = factor(c("yes", "no", "maybe", "yes", "no", "maybe", "yes", "no", "maybe", "yes"))
+  )
 ```
+
+Next we try to take the mean of each:
+
+```{r}
+mean(pull(df_1, sample))
+
+mean(pull(df_1, gr_than_zero))
+
+mean(pull(df_1, char))
+
+mean(pull(df_1, factor))
+```
+
+It only works for the `sample` and `gr_than_zero` variables! This is because you can only take the mean of a numeric or logical variable.
+
 
 # Problem 2
 
-I can take the mean of the sample, too!
-The mean is `r mean(samp)`.
+This problem is about making plots! I'll get there eventually. 
