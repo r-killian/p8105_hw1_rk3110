@@ -38,7 +38,16 @@ mean(pull(df_1, char))
 mean(pull(df_1, factor))
 ```
 
-It only works for the `sample` and `gr_than_zero` variables! This is because you can only take the mean of a numeric or logical variable.
+It only works for the `sample` and `gr_than_zero` variables! This is because you can only take the mean of a numeric or logical variable. Let's apply the `as.numeric` function to some of our variables:
+
+```{r}
+as.numeric(pull(df_1, gr_than_zero))
+
+as.numeric(pull(df_1, char))
+
+as.numeric(pull(df_1, factor))
+```
+
 
 
 # Problem 2
