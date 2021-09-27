@@ -54,13 +54,13 @@ Now we can take the mean of our factor variable in addition to our numeric and l
 
 # Problem 2
 
-Let's load in our dataset:
+Let's load in our data set:
 
 ```{r}
 data("penguins", package = "palmerpenguins")
 ```
 
-*Still need to describe names/important variables.* The data set is `r nrow(penguins)` rows long and `r `ncol(penguins)` columns wide. The mean flipper length of the data set is *can't get this to work yet come back later*
+The variables in this data set are `r names(penguins)`. The data set is `r nrow(penguins)` rows long and `r ncol(penguins)` columns wide. The mean flipper length of is *can't get this to work yet R hates missing values(?) and integers*
 
 Next let's make a plot of the data:
 
@@ -68,5 +68,7 @@ Next let's make a plot of the data:
 ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
 geom_point() +
 theme(legend.position = "bottom")
+
+ggsave("scatter_plot.pdf")
 ```
 
