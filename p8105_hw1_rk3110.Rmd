@@ -42,14 +42,14 @@ mean(pull(df_1, factor))
 It only works for the `sample` and `gr_than_zero` variables! This is because you can only take the mean of a numeric or logical variable. Let's apply the `as.numeric` function to some of our variables:
 
 ```{r, eval = FALSE}
-mean(as.numeric(pull(df_1, gr_than_zero)))
+as.numeric(pull(df_1, gr_than_zero))
 
-mean(as.numeric(pull(df_1, char)))
+as.numeric(pull(df_1, char))
 
-mean(as.numeric(pull(df_1, factor)))
+as.numeric(pull(df_1, factor))
 ```
 
-Now we can take the mean of our factor variable in addition to our numeric and logical variables. We still cannot take the mean of the character variable as it cannot be converted to a numeric variable.
+Treating our factor variable as numeric converts it to its respective 3 levels and we can now take its mean in addition to that of our numeric and logical variables. We still cannot take the mean of the character variable as treating it as numeric replaces all values with NA/missing values. By default, R cannot take the mean of a variable with missing values.
 
 
 # Problem 2
