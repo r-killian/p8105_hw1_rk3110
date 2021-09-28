@@ -60,7 +60,7 @@ Let's load in our data set:
 data("penguins", package = "palmerpenguins")
 ```
 
-The variables in this data set are `r names(penguins)`. The data set is `r nrow(penguins)` rows long and `r ncol(penguins)` columns wide. The mean flipper length of is *can't get this to work yet R hates missing values(?) and integers*
+The variables in this data set are `r names(penguins)`. The data set is `r nrow(penguins)` rows long and `r ncol(penguins)` columns wide. The mean flipper length of the data set is `r mean(pull(penguins, flipper_length_mm), na.rm = TRUE)`mm.
 
 Next let's make a plot of the data:
 
